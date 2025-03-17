@@ -1,6 +1,7 @@
 // manolo?
-import Footer from './footer';
-import Header from './header';
+import Aside from './Aside';
+import Footer from './Footer';
+import Header from './Header';
 import Main from './Main';
 
 interface Props {
@@ -9,14 +10,17 @@ interface Props {
 const Layout = ({ children }: Props) => {
     return (
         <>
-            <Header />
-            <div className="scrollbar">
+            <div className="scrollbar flex flex-row w-full">
+                <Aside />
                 <Main>
-                    <main className="min-h-[calc(100vh-90px)] md:min-h-[calc(100vh-155px)] bg-fixed relative dark:bg-[radial-gradient(ellipse_90%_95%_at_50%_-20%,rgba(120,119,198,0.2),rgba(255,255,255,0))] bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))] sm:rounded-lg p-3 ">
+                    <Header />
+                    <main
+                        className="min-h-[calc(100vh-90px)] bg-fixed relative
+                    bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,#d1c5b8,#9e724e)] p-3 ">
                         {children}
                     </main>
+                    <Footer />
                 </Main>
-                <Footer />
             </div>
         </>
     );

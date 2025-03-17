@@ -1,11 +1,15 @@
 import { Card } from 'flowbite-react';
 import Layout from './interface/layout';
+import { BrowserRouter } from 'react-router-dom';
+import RoutesApp from './interface/routes';
 
 const App = () => {
     return (
-        <Layout>
-            <Card>home</Card>
-        </Layout>
+        <BrowserRouter>
+            <Layout>
+                <RoutesApp />
+            </Layout>
+        </BrowserRouter>
     );
 };
 
