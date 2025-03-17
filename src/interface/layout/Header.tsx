@@ -21,6 +21,9 @@ const Header = () => {
                 <Link to={'/about'} className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
                     Acerca de
                 </Link>
+                <Link to={'/into'} className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
+                    Ingreso
+                </Link>
                 <button
                     onClick={() => setShowAuthModal(true)}
                     className="px-4 py-2 text-sm text-white bg-success-100 rounded-md hover:bg-success-200 dark:bg-success-200 dark:hover:bg-success-300">

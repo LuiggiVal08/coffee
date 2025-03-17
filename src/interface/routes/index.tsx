@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Home from '../views/home';
 import Profile from '../views/Profile';
 import About from '../views/About';
+import Into from '../views/Into';
 
 const RoutesApp = () => {
     return (
@@ -9,6 +10,7 @@ const RoutesApp = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/into" element={<Into />} />
             <Route path="/*" element={<h1>404</h1>} />
             <Route path="*" element={<h1>404</h1>} />
         </Routes>
