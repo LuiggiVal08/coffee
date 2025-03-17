@@ -14,37 +14,40 @@ const Header = () => {
             <div className="flex items-center gap-4 px-4 py-2">
                 <img src="/image/logo.png" alt="logo" className="h-10" />
             </div>
-            <div className="flex items-center gap-4">
-                {session ? (
-                    <Dropdown
-                        inline={true}
-                        arrowIcon={false}
-                        label={
-                            <div className="flex items-center gap-2 px-4 py-2">
-                                <Avatar img={''} rounded size="sm" color="success" />
-                                <div className="text-text-tertiary text-start">
-                                    <p className="text-sm font-medium">John Doe</p>
-                                    <p className="text-xs text-text-tertiary">john@example.com</p>
-                                </div>
+            <div className="flex items-center gap-2">
+                <Link to={'/'} className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
+                    Inicio
+                </Link>
+                <Link to={'/about'} className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
+                    Acerca de
+                </Link>
+                <button
+                    onClick={() => setShowAuthModal(true)}
+                    className="px-4 py-2 text-sm text-white bg-success-100 rounded-md hover:bg-success-200 dark:bg-success-200 dark:hover:bg-success-300">
+                    Iniciar Sesión
+                </button>
+                <Dropdown
+                    inline={true}
+                    arrowIcon={false}
+                    label={
+                        <div className="flex items-center gap-2 px-4 py-2">
+                            <Avatar img={''} rounded size="sm" color="success" />
+                            <div className="text-text-tertiary text-start">
+                                <p className="text-sm font-medium">John Doe</p>
+                                <p className="text-xs text-text-tertiary">john@example.com</p>
                             </div>
-                        }>
-                        <Dropdown.Item to={'/'} as={Link}>
-                            Profile
-                        </Dropdown.Item>
-                        <Dropdown.Item to={'/'} as={Link}>
-                            Config
-                        </Dropdown.Item>
-                        <Dropdown.Item to={'/'} as={Link}>
-                            Log Out
-                        </Dropdown.Item>
-                    </Dropdown>
-                ) : (
-                    <button
-                        onClick={() => setShowAuthModal(true)}
-                        className="px-4 py-2 text-sm text-white bg-success-100 rounded-md hover:bg-success-200 dark:bg-success-200 dark:hover:bg-success-300">
-                        Iniciar Sesión
-                    </button>
-                )}
+                        </div>
+                    }>
+                    <Dropdown.Item to={'/profile'} as={Link}>
+                        Profile
+                    </Dropdown.Item>
+                    <Dropdown.Item to={'/'} as={Link}>
+                        Config
+                    </Dropdown.Item>
+                    <Dropdown.Item to={'/'} as={Link}>
+                        Log Out
+                    </Dropdown.Item>
+                </Dropdown>
             </div>
         </div>
     );

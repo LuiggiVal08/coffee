@@ -1,12 +1,21 @@
-import { Card, TextInput } from 'flowbite-react';
+import { Card } from 'flowbite-react';
 
 const Home = () => {
     return (
         <div className="w-full flex flex-col gap-4 ">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 ">
+                <Card>
+                    <div className="flex flex-col">
+                        <p className="text-white">Café en Grano</p>
+                        <span className="text-gray-200">Disponible: 50kl</span>
+                    </div>
+                </Card>
+                <Card>
+                    <div className="flex flex-col">
+                        <p className="text-white">Café Molido</p>
+                        <span className="text-gray-200">Disponible: 50kl</span>
+                    </div>
+                </Card>
             </div>
             <Card>
                 <div className="flex gap-4 items-center justify-between">
