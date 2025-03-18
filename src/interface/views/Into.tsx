@@ -1,4 +1,4 @@
-import { Button, Card, HR, TextInput } from 'flowbite-react';
+import { Button, Card, HR } from 'flowbite-react';
 import { useForm } from 'react-hook-form';
 
 const FormInto = () => {

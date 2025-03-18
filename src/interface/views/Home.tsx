@@ -1,69 +1,34 @@
-import { Card } from 'flowbite-react';
+import { Button } from 'flowbite-react';
+import Auth from './Auth';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+    const [showAuthModal, setShowAuthModal] = useState(false);
     return (
-        <div className="w-full flex flex-col gap-4 ">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 ">
-                <Card>
-                    <div className="flex flex-col">
-                        <p className="text-white">Café en Grano</p>
-                        <span className="text-gray-200">Disponible: 50kl</span>
-                    </div>
-                </Card>
-                <Card>
-                    <div className="flex flex-col">
-                        <p className="text-white">Café Molido</p>
-                        <span className="text-gray-200">Disponible: 50kl</span>
-                    </div>
-                </Card>
+        <div className="w-full flex flex-col gap-4  justify-center items-center h-[calc(100vh-8rem)]">
+            {showAuthModal && <Auth isOpen={showAuthModal} setIsOpen={() => setShowAuthModal(!showAuthModal)} />}
+            <div className="flex flex-col gap-4 w-full justify-center items-center">
+                <div className="rounded-full overflow-hidden p-6 border-4 border-quaternary aspect-square flex justify-center items-center">
+                    <img src="/image/logo_2.png" alt="logo" className="w-full max-w-28" />
+                </div>
+                <h1 className="text-2xl font-bold text-white">Bienvenido a Café 5.0</h1>
+                <p className="text-lg text-white">Sistema de gestión de café para café amateur</p>
             </div>
-            <Card>
-                <div className="flex gap-4 items-center justify-between">
-                    <h1 className="text-2xl font-semibold text-white">Proveedores</h1>
-                    <input
-                        className="min-w-72 rounded-md border-[1px] border-white h-10 p-4 bg-transparent text-white placeholder:text-white outline-none"
-                        placeholder="Buscar Proveedor"
-                    />
-                </div>
-                <div className="w-full overflow-x-auto flex py-4">
-                    <table className="w-full text-white">
-                        <thead>
-                            <tr className="bg-secondary">
-                                <th className="p-2" align="left">
-                                    Nombre
-                                </th>
-                                <th className="p-2" align="center">
-                                    Dirección
-                                </th>
-                                <th className="p-2" align="center">
-                                    Teléfono
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y divide-quaternary">
-                            <tr className="hover:bg-secondary cursor-pointer">
-                                <td className="p-2"> XYZ</td>
-                                <td className="p-2" align="center">
-                                    Sabanita, Boconó
-                                </td>
-                                <td className="p-2" align="center">
-                                    +56 987654321
-                                </td>
-                            </tr>
-
-                            <tr className="hover:bg-secondary cursor-pointer">
-                                <td className="p-2"> ABC</td>
-                                <td className="p-2" align="center">
-                                    Sabanita, Boconó
-                                </td>
-                                <td className="p-2" align="center">
-                                    +56 987654321
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </Card>
+            <div className="flex justify-center w-full items-center gap-4 py-4 ">
+                <Button
+                    type="button"
+                    onClick={() => setShowAuthModal(true)}
+                    className="font-medium bg-secondary hover:!bg-primary">
+                    Iniciar Sessión
+                </Button>
+                <Button
+                    to={'/sing-up'}
+                    as={Link}
+                    className="font-medium bg-transparent hover:!bg-secondary border-secondary border-2">
+                    Crear Cuenta
+                </Button>
+            </div>
         </div>
     );
 };

@@ -1,16 +1,11 @@
 // interface Props {}
 
 import { Avatar, Dropdown } from 'flowbite-react';
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Auth from './components/Auth';
 
 const Header = () => {
-    const [session, setSession] = useState(false);
-    const [showAuthModal, setShowAuthModal] = useState(false);
     return (
         <div className="w-full flex justify-between sticky top-0 z-50 bg-secondary dark:bg-dark-500 shadow-sm text-white">
-            {showAuthModal && <Auth isOpen={showAuthModal} setIsOpen={() => setShowAuthModal(!showAuthModal)} />}
             <div className="flex items-center gap-4 px-4 py-2">
                 <img src="/image/logo.png" alt="logo" className="h-10" />
             </div>
@@ -21,14 +16,23 @@ const Header = () => {
                 <Link to={'/about'} className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
                     Acerca de
                 </Link>
+                <Link to={'/dashboard'} className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
+                    Dashboard
+                </Link>
                 <Link to={'/into'} className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
                     Ingreso
                 </Link>
-                <button
-                    onClick={() => setShowAuthModal(true)}
-                    className="px-4 py-2 text-sm text-white bg-success-100 rounded-md hover:bg-success-200 dark:bg-success-200 dark:hover:bg-success-300">
-                    Iniciar Sesión
-                </button>
+                <Link
+                    to={'/raw-material'}
+                    className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
+                    Materia Prima
+                </Link>
+                <Link
+                    to={'/production'}
+                    className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
+                    Producción
+                </Link>
+
                 <Dropdown
                     inline={true}
                     arrowIcon={false}

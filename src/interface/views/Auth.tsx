@@ -1,6 +1,6 @@
 import { Button, Modal, TextInput } from 'flowbite-react';
 import { useForm } from 'react-hook-form';
-import { Format } from '../../../helpers/utils/format';
+import { Format } from '../../helpers/utils/format';
 
 const Auth = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: () => void }) => {
     const { register, handleSubmit, formState, setValue } = useForm();
@@ -72,7 +72,7 @@ const Auth = ({ isOpen, setIsOpen }: { isOpen: boolean; setIsOpen: () => void })
                         )}
                     </div>
 
-                    <Button type="submit" color="blue" className="w-full">
+                    <Button type="submit" className="w-full bg-secondary hover:!bg-primary">
                         Iniciar Sesión
                     </Button>
                 </form>
