@@ -7,6 +7,7 @@ import SingUp from '../views/SingUp';
 import Dashboard from '../views/Dashboard';
 import RawMaterial from '../views/RawMaterial';
 import Production from '../views/Production';
+import Users from '../views/Users';
 
 const RoutesApp = () => {
     return (
@@ -19,6 +20,7 @@ const RoutesApp = () => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/raw-material" element={<RawMaterial />} />
             <Route path="/production" element={<Production />} />
+            <Route path="/users" element={<Users />} />
 
             <Route path="/*" element={<h1>404</h1>} />
             <Route path="*" element={<h1>404</h1>} />

@@ -32,6 +32,9 @@ const Header = () => {
                     className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
                     Producción
                 </Link>
+                <Link to={'/users'} className="px-4 py-2 text-sm text-white hover:text-success-100 dark:text-white">
+                    Usuarios
+                </Link>
 
                 <Dropdown
                     inline={true}
